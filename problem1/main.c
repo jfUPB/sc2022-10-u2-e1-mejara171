@@ -59,8 +59,16 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     int pos = 0;
     int a = 0;
     for(int i = 0; i < arrIn1->size; i++){       
-
-  
+        for(int j = 0; j < arrIn2->size; j++){
+            if(*(arrIn1->pdata+i) == *(arrIn2->pdata+j)){
+                for(int k = 0; k < pos; k++){
+                    if(*(arrOut->pdata+k) == *(arrIn1->pdata+i)){
+                        a = 1;
+                    }
+                }
+           
+            }
+        }
     }
 
 }
