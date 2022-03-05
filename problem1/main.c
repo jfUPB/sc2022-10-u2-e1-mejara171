@@ -79,8 +79,9 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
             }
         }
     }
-    
+
     arrOut->size = pos;
+    
 }
 
 
