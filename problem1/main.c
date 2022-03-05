@@ -66,11 +66,15 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
                         a = 1;
                     }
                 }
-           
+                if(a != 1){
+                    *(arrOut->pdata+pos) = *(arrIn1->pdata+i);
+                    pos++;                 
+                }
+                a = 0;               
             }
         }
     }
-
+    arrOut->size = pos;
 }
 
 
