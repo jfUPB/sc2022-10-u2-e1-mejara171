@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <errno.h>
 
 #ifdef DOLOG
 #define LOG(...) fprintf(log, __VA_ARGS__);
@@ -36,13 +37,27 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+    parr->pdata = malloc(50);
+    char size[10];
+    char *endptr;
+    long Size2;
+    char comp[10];
+    if(fgets(size, 10, stdin) != NULL){
+        Size2 = strtol(size, &endptr, 10);
+        parr->size = Size2;
+        for(int i = 0; i < Size2; i++ ){
+            fgets(comp, 10, stdin);
+            *(parr->pdata+i) = strtol(comp, &endptr, 10);                     
+        }
+    }
+   
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
-    
+
 }
+
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
 {
