@@ -40,14 +40,18 @@ void getArray(struct array *parr)
     parr->pdata = malloc(50);
     char size[10];
     char *endptr;
-    long sizeInt;
-    char sancocho[10];
+    long Size2;
+    char cont[10];
+
     if(fgets(size, 10, stdin) != NULL){
-        sizeInt = strtol(size, &endptr, 10);
-        parr->size = sizeInt;
-        for(int i = 0; i < sizeInt; i++ ){
-            fgets(sancocho, 10, stdin);
-            *(parr->pdata+i) = strtol(sancocho, &endptr, 10);                     
+        Size2
+ = strtol(size, &endptr, 10);
+        parr->size = Size2
+;
+        for(int i = 0; i < Size2
+; i++ ){
+            fgets(cont, 10, stdin);
+            *(parr->pdata+i) = strtol(cont, &endptr, 10);                     
         }
     }
    
@@ -58,6 +62,7 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     arrOut->pdata = malloc(50);
     int pos = 0;
     int a = 0;
+
     for(int i = 0; i < arrIn1->size; i++){       
         for(int j = 0; j < arrIn2->size; j++){
             if(*(arrIn1->pdata+i) == *(arrIn2->pdata+j)){
@@ -74,6 +79,7 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
             }
         }
     }
+    
     arrOut->size = pos;
 }
 
