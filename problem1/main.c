@@ -37,7 +37,7 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    parr->pdata = malloc(16);
+    parr->pdata = malloc(50);
     char size[10];
     char *endptr;
     long Size2;
@@ -58,7 +58,7 @@ void getArray(struct array *parr)
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
-    arrOut->pdata = malloc(16);
+    arrOut->pdata = malloc(50);
     int pos = 0;
     int a = 0;
 
